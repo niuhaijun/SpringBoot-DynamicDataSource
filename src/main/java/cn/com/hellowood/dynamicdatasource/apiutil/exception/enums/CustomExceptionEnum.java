@@ -2,9 +2,6 @@ package cn.com.hellowood.dynamicdatasource.apiutil.exception.enums;
 
 import cn.com.hellowood.dynamicdatasource.apiutil.exception.CustomServiceException;
 import cn.com.hellowood.dynamicdatasource.apiutil.model.BaseResponse;
-import jdk.nashorn.internal.objects.annotations.Getter;
-
-import java.util.function.BiFunction;
 
 /**
  * @author LDZ
@@ -13,38 +10,44 @@ import java.util.function.BiFunction;
 public enum CustomExceptionEnum {
 
 
-    /**
-     * 业务的参数错误
-     */
-    PARAM_ERROR(105) {
-        // override
+	/**
+	 * 业务的参数错误
+	 */
+	PARAM_ERROR(105) {
+		// override
 
-    };
+	};
 
 
-    int code;
+	int code;
 
-    public RuntimeException handlerException(String s, Object d) {
-        return new CustomServiceException(this, s, d);
-    }
+	CustomExceptionEnum(int code) {
 
-    public RuntimeException handlerException(String s) {
-        return new CustomServiceException(this, s);
-    }
+		this.code = code;
+	}
 
-    public BaseResponse handlerBaseResponse(String s, Object d) {
-        return new BaseResponse(this, s, d);
-    }
+	public RuntimeException handlerException(String s, Object d) {
 
-    public BaseResponse handlerBaseResponse(String s) {
-        return new BaseResponse(this, s);
-    }
+		return new CustomServiceException(this, s, d);
+	}
 
-    public int getCode() {
-        return code;
-    }
+	public RuntimeException handlerException(String s) {
 
-    CustomExceptionEnum(int code) {
-        this.code = code;
-    }
+		return new CustomServiceException(this, s);
+	}
+
+	public BaseResponse handlerBaseResponse(String s, Object d) {
+
+		return new BaseResponse(this, s, d);
+	}
+
+	public BaseResponse handlerBaseResponse(String s) {
+
+		return new BaseResponse(this, s);
+	}
+
+	public int getCode() {
+
+		return code;
+	}
 }

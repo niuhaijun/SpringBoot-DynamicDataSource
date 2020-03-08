@@ -10,33 +10,40 @@ import java.io.Serializable;
  * @Email hellowoodes@gmail.com
  */
 public class Product implements Serializable {
-    private static final long serialVersionUID = 1435515995276255188L;
 
-    private long id;
-    private String name;
-    private long price;
+	private static final long serialVersionUID = 1435515995276255188L;
 
-    public long getId() {
-        return id;
-    }
+	private long id;
+	private String name;
+	private long price;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	public long getId() {
 
-    public String getName() {
-        return name;
-    }
+		return id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setId(long id) {
 
-    public long getPrice() {
-        return price;
-    }
+		this.id = id;
+	}
 
-    public void setPrice(long price) {
-        this.price = price;
-    }
+	public String getName() {
+
+		return name;
+	}
+
+	public void setName(String name) {
+
+		this.name = name;
+	}
+
+	public long getPrice() {
+
+		return price;
+	}
+
+	public void setPrice(long price) {
+
+		this.price = price;
+	}
 }

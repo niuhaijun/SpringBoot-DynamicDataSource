@@ -1,4 +1,4 @@
-package cn.com.hellowood.dynamicdatasource.configuration;
+package cn.com.hellowood.dynamicdatasource.config;
 
 import cn.com.hellowood.dynamicdatasource.apiutil.config.BaseWebMvcConfig;
 import cn.com.hellowood.dynamicdatasource.apiutil.exception.BaseExceptionHandler;
@@ -17,8 +17,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WebMvcConfigurer extends BaseWebMvcConfig {
 
-    @Bean
-    public BaseExceptionHandler baseExceptionHandler() {
-        return new BaseExceptionHandler();
-    }
+	@Bean
+	public BaseExceptionHandler baseExceptionHandler() {
+
+		return new BaseExceptionHandler();
+	}
 }

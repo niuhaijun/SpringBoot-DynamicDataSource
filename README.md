@@ -142,7 +142,8 @@ public enum DataSourceKey {
 > 该类继承自 `AbstractRoutingDataSource` 类，在访问数据库时会调用该类的 `determineCurrentLookupKey()` 方法获取数据库实例的 key
 
 ```java
-package cn.com.hellowood.dynamicdatasource.configuration;
+```java
+package cn.com.hellowood.dynamicdatasource.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -166,7 +167,8 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 > 数据源配置类，在该类中生成多个数据源实例并将其注入到 `ApplicationContext` 中
 
 ```java
-package cn.com.hellowood.dynamicdatasource.configuration;
+```java
+package cn.com.hellowood.dynamicdatasource.config;
 
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -295,7 +297,8 @@ public class DataSourceConfigurer {
 > 该类为数据源上下文配置，用于切换数据源
 
 ```java
-package cn.com.hellowood.dynamicdatasource.configuration;
+```java
+package cn.com.hellowood.dynamicdatasource.config;
 
 
 import cn.com.hellowood.dynamicdatasource.common.DataSourceKey;
@@ -398,7 +401,8 @@ public class DynamicDataSourceContextHolder {
 > 关于切面的 Order 可以可以不设，因为 `@Transactional` 是最低的，取决于其他切面的设置，并且在 `org.springframework.core.annotation.AnnotationAwareOrderComparator` 会重新排序
 
 ```java
-package cn.com.hellowood.dynamicdatasource.configuration;
+```java
+package cn.com.hellowood.dynamicdatasource.config;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;

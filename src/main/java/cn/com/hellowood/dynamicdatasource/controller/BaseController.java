@@ -16,14 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseController {
 
-    /**
-     * Root path, The HEAD method is for SpringBoot Admin to monitor application status
-     *
-     * @return
-     */
-    @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
-    @ResponseBody
-    public String root() {
-        return "Hello World";
-    }
+	/**
+	 * Root path, The HEAD method is for SpringBoot Admin to monitor application status
+	 *
+	 * @return
+	 */
+	@RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.HEAD})
+	@ResponseBody
+	public String root() {
+
+		return "Hello World";
+	}
 }

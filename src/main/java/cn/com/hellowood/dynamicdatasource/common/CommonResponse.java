@@ -12,39 +12,46 @@ import cn.com.hellowood.dynamicdatasource.utils.JSONUtil;
  */
 public class CommonResponse {
 
-    private int code;
-    private String message;
-    private Object data;
+	private int code;
+	private String message;
+	private Object data;
 
-    public int getCode() {
-        return code;
-    }
+	public int getCode() {
 
-    public CommonResponse setCode(ResponseCode responseCode) {
-        this.code = responseCode.code;
-        return this;
-    }
+		return code;
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public CommonResponse setCode(ResponseCode responseCode) {
 
-    public CommonResponse setMessage(String message) {
-        this.message = message;
-        return this;
-    }
+		this.code = responseCode.code;
+		return this;
+	}
 
-    public Object getData() {
-        return data;
-    }
+	public String getMessage() {
 
-    public CommonResponse setData(Object data) {
-        this.data = data;
-        return this;
-    }
+		return message;
+	}
 
-    @Override
-    public String toString() {
-        return JSONUtil.toJSONString(this);
-    }
+	public CommonResponse setMessage(String message) {
+
+		this.message = message;
+		return this;
+	}
+
+	public Object getData() {
+
+		return data;
+	}
+
+	public CommonResponse setData(Object data) {
+
+		this.data = data;
+		return this;
+	}
+
+	@Override
+	public String toString() {
+
+		return JSONUtil.toJSONString(this);
+	}
 }

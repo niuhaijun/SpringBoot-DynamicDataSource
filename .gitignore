@@ -1,19 +1,6 @@
+.github
 .gradle
-/build/
-
-
-### IntelliJ IDEA ###
 .idea
-*.iml
-
-build/
-
-### Java template
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-out/
-logs/
+gradle
+gradlew.bat
+build.gradle

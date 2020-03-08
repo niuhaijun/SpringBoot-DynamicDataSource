@@ -16,56 +16,65 @@ import cn.com.hellowood.dynamicdatasource.apiutil.exception.enums.CustomExceptio
  */
 public class CustomServiceException extends RuntimeException {
 
-    /**
-     * 自定义错误
-     */
-    private CustomExceptionEnum customExceptionEnum;
+	/**
+	 * 自定义错误
+	 */
+	private CustomExceptionEnum customExceptionEnum;
 
-    /**
-     * 错误的描述
-     */
-    private String errorDescription;
+	/**
+	 * 错误的描述
+	 */
+	private String errorDescription;
 
-    /**
-     * 需要返回的数据
-     */
-    private Object data;
+	/**
+	 * 需要返回的数据
+	 */
+	private Object data;
 
 
-    public CustomServiceException(CustomExceptionEnum customExceptionEnum, String desc) {
-        super(desc);
-        this.customExceptionEnum = customExceptionEnum;
-        this.errorDescription = desc;
-    }
+	public CustomServiceException(CustomExceptionEnum customExceptionEnum, String desc) {
 
-    public CustomServiceException(CustomExceptionEnum customExceptionEnum, String desc, Object data) {
-        super(desc);
-        this.customExceptionEnum = customExceptionEnum;
-        this.errorDescription = desc;
-        this.data = data;
-    }
+		super(desc);
+		this.customExceptionEnum = customExceptionEnum;
+		this.errorDescription = desc;
+	}
 
-    public CustomExceptionEnum getCustomExceptionEnum() {
-        return customExceptionEnum;
-    }
+	public CustomServiceException(CustomExceptionEnum customExceptionEnum, String desc,
+		Object data) {
 
-    public void setCustomExceptionEnum(CustomExceptionEnum customExceptionEnum) {
-        this.customExceptionEnum = customExceptionEnum;
-    }
+		super(desc);
+		this.customExceptionEnum = customExceptionEnum;
+		this.errorDescription = desc;
+		this.data = data;
+	}
 
-    public String getErrorDescription() {
-        return errorDescription;
-    }
+	public CustomExceptionEnum getCustomExceptionEnum() {
 
-    public void setErrorDescription(String errorDescription) {
-        this.errorDescription = errorDescription;
-    }
+		return customExceptionEnum;
+	}
 
-    public Object getData() {
-        return data;
-    }
+	public void setCustomExceptionEnum(CustomExceptionEnum customExceptionEnum) {
 
-    public void setData(Object data) {
-        this.data = data;
-    }
+		this.customExceptionEnum = customExceptionEnum;
+	}
+
+	public String getErrorDescription() {
+
+		return errorDescription;
+	}
+
+	public void setErrorDescription(String errorDescription) {
+
+		this.errorDescription = errorDescription;
+	}
+
+	public Object getData() {
+
+		return data;
+	}
+
+	public void setData(Object data) {
+
+		this.data = data;
+	}
 }

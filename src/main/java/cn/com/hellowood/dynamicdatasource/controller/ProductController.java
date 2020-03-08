@@ -1,13 +1,19 @@
 package cn.com.hellowood.dynamicdatasource.controller;
 
 import cn.com.hellowood.dynamicdatasource.apiutil.annotation.ApiResponseBody;
+import cn.com.hellowood.dynamicdatasource.error.ServiceException;
 import cn.com.hellowood.dynamicdatasource.model.Product;
 import cn.com.hellowood.dynamicdatasource.service.ProductService;
-import cn.com.hellowood.dynamicdatasource.error.ServiceException;
-import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 import java.util.List;
+import javax.annotation.Resource;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Product controller
@@ -21,72 +27,67 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    @Resource
-    private ProductService productService;
+	@Resource
+	private ProductService productService;
 
-    /**
-     * Get product by id
-     *
-     * @param productId
-     * @return
-     * @throws ServiceException
-     */
-    @GetMapping("/{id}")
-    @ApiResponseBody
-    public Product getProduct(@PathVariable("id") Long productId) throws ServiceException {
-        return productService.select(productId);
-    }
+	/**
+	 * Get product by id
+	 */
+	@GetMapping("/{id}")
+	@ApiResponseBody
+	public Product getProduct(@PathVariable("id") Long productId) throws ServiceException {
 
-    /**
-     * Get all product
-     *
-     * @return
-     * @throws ServiceException
-     */
-    @GetMapping
-    @ApiResponseBody
-    public List<Product> getAllProduct() {
-        return productService.getAllProduct();
-    }
+		return productService.select(productId);
+	}
 
-    /**
-     * Update product by id
-     *
-     * @param productId
-     * @param newProduct
-     * @return
-     * @throws ServiceException
-     */
+	/**
+	 * Get all product
+	 */
+	@GetMapping("getAllProduct")
+	@ApiResponseBody
+	public List<Product> getAllProduct() {
 
-    @PutMapping("/{id}")
-    @ApiResponseBody
-    public Product updateProduct(@PathVariable("id") Long productId, @RequestBody Product newProduct) throws ServiceException {
-        return productService.update(productId, newProduct);
-    }
+		return productService.getAllProduct();
+	}
 
-    /**
-     * Delete product by id
-     *
-     * @param productId
-     * @return
-     * @throws ServiceException
-     */
-    @DeleteMapping("/{id}")
-    @ApiResponseBody
-    public boolean deleteProduct(@PathVariable("id") long productId) throws ServiceException {
-        return productService.delete(productId);
-    }
+	/**
+	 * Update product by id
+	 *
+	 * @param productId
+	 * @param newProduct
+	 * @return
+	 * @throws ServiceException
+	 */
 
-    /**
-     * Save product
-     *
-     * @param newProduct
-     * @return
-     * @throws ServiceException
-     */
-    @PostMapping
-    @ApiResponseBody
-    public boolean addProduct(@RequestBody Product newProduct) throws ServiceException {
-        return productService.add(newProduct);
-    }
+	@PutMapping("/{id}")
+	@ApiResponseBody
+	public Product updateProduct(@PathVariable("id") Long productId,
+		@RequestBody Product newProduct) throws ServiceException {
+
+		return productService.update(productId, newProduct);
+	}
+
+	/**
+	 * Delete product by id
+	 *
+	 * @param productId
+	 * @return
+	 * @throws ServiceException
+	 */
+	@DeleteMapping("/{id}")
+	@ApiResponseBody
+	public boolean deleteProduct(@PathVariable("id") long productId) throws ServiceException {
+
+		return productService.delete(productId);
+	}
+
+	/**
+	 * Save product
+	 */
+	@PostMapping
+	@ApiResponseBody
+	public boolean addProduct(@RequestBody Product newProduct) throws ServiceException {
+
+		return productService.add(newProduct);
+	}
 }

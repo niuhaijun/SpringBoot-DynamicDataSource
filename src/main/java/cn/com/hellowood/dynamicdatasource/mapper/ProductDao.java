@@ -1,10 +1,9 @@
 package cn.com.hellowood.dynamicdatasource.mapper;
 
 import cn.com.hellowood.dynamicdatasource.model.Product;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * Product mapper for operate data of products table
@@ -13,16 +12,16 @@ import java.util.List;
  * @date 2017-07-11 10:54
  * @Email hellowoodes@gmail.com
  */
-
 @Mapper
 public interface ProductDao {
-    Product select(@Param("id") long id);
 
-    Integer update(Product product);
+	Product select(@Param("id") long id);
 
-    Integer insert(Product product);
+	Integer update(Product product);
 
-    Integer delete(long productId);
+	Integer insert(Product product);
 
-    List<Product> getAllProduct();
+	Integer delete(long productId);
+
+	List<Product> getAllProduct();
 }
