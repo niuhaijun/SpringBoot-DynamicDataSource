@@ -298,10 +298,11 @@ public class DataSourceConfigurer {
 
 ```java
 ```java
+```java
 package cn.com.hellowood.dynamicdatasource.config;
 
 
-import cn.com.hellowood.dynamicdatasource.common.DataSourceKey;
+import com.niu.springbootdynamicdatasource.common.DataSourceKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -460,12 +461,13 @@ public class DynamicDataSourceAspect {
 - ProductController.java
    
 ```java
+```java
 package cn.com.hellowood.dynamicdatasource.controller;
 
 import cn.com.hellowood.dynamicdatasource.common.CommonResponse;
-import cn.com.hellowood.dynamicdatasource.common.ResponseUtil;
+import com.niu.springbootdynamicdatasource.common.ResponseUtil;
 import cn.com.hellowood.dynamicdatasource.model.Product;
-import cn.com.hellowood.dynamicdatasource.service.ProductService;
+import com.niu.springbootdynamicdatasource.service.ProductService;
 import cn.com.hellowood.dynamicdatasource.error.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -508,9 +510,10 @@ public class ProductController {
 
 - ProductService.java
 ```java
+```java
 package cn.com.hellowood.dynamicdatasource.service;
 
-import cn.com.hellowood.dynamicdatasource.mapper.ProductDao;
+import com.niu.springbootdynamicdatasource.mapper.ProductDao;
 import cn.com.hellowood.dynamicdatasource.model.Product;
 import cn.com.hellowood.dynamicdatasource.error.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -571,9 +574,10 @@ public class ProductService {
 - ProductDao.java
 
 ```java
+```java
 package cn.com.hellowood.dynamicdatasource.mapper;
 
-import cn.com.hellowood.dynamicdatasource.model.Product;
+import com.niu.springbootdynamicdatasource.model.Product;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
