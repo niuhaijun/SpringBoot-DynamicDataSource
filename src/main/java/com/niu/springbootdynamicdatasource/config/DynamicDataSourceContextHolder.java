@@ -21,8 +21,6 @@ public class DynamicDataSourceContextHolder {
 
 	/**
 	 * Maintain variable for every thread, to avoid effect other thread
-	 *
-	 * set main dataSource
 	 */
 	private static final ThreadLocal<String> CONTEXT_HOLDER = ThreadLocal
 		.withInitial(DataSourceKey.master::name);

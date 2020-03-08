@@ -17,6 +17,9 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 
 	/**
 	 * Set dynamic DataSource to Application Context
+	 *
+	 * 在事务环境中，以DynamicDataSourceContextHolder中的初始数据源为准，
+	 * 事务执行后，才会aop切换数据源
 	 */
 	@Override
 	protected Object determineCurrentLookupKey() {

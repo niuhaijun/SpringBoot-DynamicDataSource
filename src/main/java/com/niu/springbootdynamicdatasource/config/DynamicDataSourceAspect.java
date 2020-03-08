@@ -22,12 +22,12 @@ public class DynamicDataSourceAspect {
 
 	private static final Logger logger = LoggerFactory.getLogger(DynamicDataSourceAspect.class);
 
-	private final String[] QUERY_PREFIX = {"get", "select", "query", "add"};
+	private final String[] QUERY_PREFIX = {"get", "select", "query"};
 
 	/**
 	 * Dao aspect.
 	 */
-	@Pointcut("execution( * cn.com.hellowood.dynamicdatasource.mapper.*.*(..))")
+	@Pointcut("execution( * com.niu.springbootdynamicdatasource.mapper.*.*(..))")
 	public void daoAspect() {
 
 	}

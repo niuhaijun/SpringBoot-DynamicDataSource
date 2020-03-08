@@ -79,6 +79,7 @@ public class ProductService {
 	 *
 	 * @return
 	 */
+	@Transactional(rollbackFor = Exception.class)
 	public List<Product> getAllProduct() {
 
 		return productDao.getAllProduct();

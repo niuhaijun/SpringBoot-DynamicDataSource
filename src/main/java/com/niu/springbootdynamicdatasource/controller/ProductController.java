@@ -43,7 +43,7 @@ public class ProductController {
 	/**
 	 * Get all product
 	 */
-	@GetMapping("getAllProduct")
+	@GetMapping
 	@ApiResponseBody
 	public List<Product> getAllProduct() {
 
